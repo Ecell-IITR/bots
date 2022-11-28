@@ -1,12 +1,12 @@
-from pyautogui import hotkey, press, typewrite 
+from pyautogui import  press, typewrite 
 import pandas as p
 import time as t 
 
 # t.sleep(5)
-column_number=2
-x=p.read_csv("CAP.csv")
-
+column_number= int(input("Enter the column number: "))
 # x=x.loc[:,1]
+x=p.read_csv(input("enter name of file :- ")+".csv")
+
 print()
 # acess pandas dataframe by coulmn index
 counter=1
@@ -26,6 +26,9 @@ for index, row in x.iteritems():
   t.sleep(1)
 
   press('enter')
-  press('backspace')
+  t.sleep(1)
+  for k in range(10):
+    press('backspace')
+    t.sleep(0.1)
 
 print("completed")
